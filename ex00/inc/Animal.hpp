@@ -18,9 +18,12 @@ class Animal
     private:
         std::string _type;
     public:
-        virtual ~Animal() {};
-        virtual void makeSound() const = 0;
-        void setType(std::string type);
+        Animal();
+        Animal(const Animal& other);
+        Animal& operator=(const Animal& other);
+        virtual ~Animal();
+        virtual void makeSound() const;
         std::string getType() const;
+        void setType(std::string type);
 };
 

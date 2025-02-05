@@ -14,22 +14,24 @@
 
 Cat::Cat()
 {
+    std::cout << "Cat default constructor called" << std::endl;
     setType("Cat");
 }
 
-Cat::Cat(Cat const & src)
-{
-    *this = src;
-}
+Cat::Cat(Cat const & src) : Animal(src) {}
 
 Cat & Cat::operator=(Cat const & src)
 {
-    setType(src.getType());
+    if (this != &src)
+    {
+        Animal::operator=(src);
+    }
     return *this;
 }
 
 Cat::~Cat()
 {
+    std::cout << "Cat destructor called" << std::endl;
 }
 
 void Cat::makeSound() const

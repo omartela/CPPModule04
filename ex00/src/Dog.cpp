@@ -14,22 +14,24 @@
 
 Dog::Dog()
 {
+    std::cout << "Dog constructor called" << std::endl;
     setType("Dog");
 }
 
-Dog::Dog(Dog const & src)
-{
-    *this = src;
-}
+Dog::Dog(Dog const & src) : Animal(src) {}
 
 Dog & Dog::operator=(Dog const & src)
 {
-    setType(src.getType());
+    if (this != &src)
+    {
+        Animal::operator=(src);
+    }
     return *this;
 }
 
 Dog::~Dog()
 {
+    std::cout << "Dog destructor called" << std::endl;
 }
 
 void Dog::makeSound() const
