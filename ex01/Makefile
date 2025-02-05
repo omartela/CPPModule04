@@ -14,7 +14,7 @@ COMPILER = c++
 
 TARGET = Animal
 INC_DIR = inc
-SRC = src/Animal.cpp src/Cat.cpp src/Dog.cpp src/WrongCat.cpp src/WrongAnimal.cpp src/main.cpp
+SRC = src/Animal.cpp src/Cat.cpp src/Dog.cpp src/Brain.cpp src/main.cpp
 OBJ = $(SRC:.cpp=.o)
 CFLAGS = -Wall -Wextra -Werror -I$(INC_DIR)
 
